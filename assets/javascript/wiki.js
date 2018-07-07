@@ -15,7 +15,7 @@ $(document).ready(function() {
   var searchTerm = toTitleCase(searchTerm);
   // searchTerm = searchTerm.replace(" ", "+");
     
-    var queryURL = "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&origin=*&exintro=&titles=" + searchTerm;
+    var queryURL = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&origin=*&exintro=&titles=" + searchTerm;
 
     $.ajax({
       url: queryURL,
