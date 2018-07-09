@@ -1,4 +1,10 @@
-/* iframe {
-    background-color: red;
-    height: 100%;
-} */
+body {
+     background-color: rgba(156,212,255,1) 
+    }
+
+.card, {
+     background-color: rgba(113,193,255,1) 
+    }
+.card-body, .container, .jumbotron {
+     background-color: rgba(208,235,255,1) 
+    }
