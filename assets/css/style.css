@@ -1,5 +1,7 @@
 body {
-     background-color: rgba(156,212,255,1) 
+    background-image: url("../../images/recordsbackground2.png")
+    background-color: rgba(156,212,255,1) 
+    
     }
 
 .card, {
