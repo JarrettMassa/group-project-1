@@ -1,9 +1,8 @@
-body {
-    background-image: url("../../images/recordsbackground2.png")
+ body {
+    background-image: url('../images/recordsbackground2.png')
     background-color: rgba(156,212,255,1) 
-    
+    background-size: 100%;
     }
-
 .card, {
      background-color: rgba(113,193,255,1) 
     }
