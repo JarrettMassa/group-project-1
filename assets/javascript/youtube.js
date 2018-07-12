@@ -21,6 +21,7 @@ $(document).ready(function() {
       url: queryURL,
       method: "GET",
     }).then(function(data) {
+        console.log(data);
     console.log(data.items[0].id.videoId);
     var newVideo = "https://www.youtube.com/embed/" + data.items[0].id.videoId;
     $(".embed-responsive-item").attr("src", newVideo);
