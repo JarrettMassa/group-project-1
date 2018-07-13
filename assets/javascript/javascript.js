@@ -14,7 +14,7 @@ $(document).ready(function() {
     var maxReplace = Math.floor(Math.random() * 5) + 1;
     var replaceCount = 0;
     var apiKey = "f43c89c323b144e713989222d2dc1ac0&format=json";
-    var baseUrl = "http://ws.audioscrobbler.com/2.0/?method="
+    var baseUrl = "https://ws.audioscrobbler.com/2.0/?method="
 
     var searchTerm = $(".input-text").val();
     $(".input-text").val("");
