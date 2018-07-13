@@ -26,6 +26,9 @@
     
 }
 .search-gif {
-    background-image: url('https://media.giphy.com/media/90WzNHvVHgK4/giphy.gif');
     background-size: cover;
+}
+
+.display-4 {
+    opacity: 0;
 }

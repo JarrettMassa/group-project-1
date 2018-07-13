@@ -6,7 +6,7 @@ $(document).ready(function() {
     sessionStorage.setItem("count", 0);
     sessionStorage.setItem("leastPopularCount", 999999999999999)
     $(".wiki-description").html("");
-
+    debugger
     $(".comment-clerk").text("Hmmmmmm, let me think ...");
 
     var infoUrl;
@@ -61,7 +61,7 @@ $(document).ready(function() {
 
             loadYoutube(sessionStorage.getItem("leastPopularArtist"));
             var comment = newComment(sessionStorage.getItem("searchTerm"), sessionStorage.getItem("leastPopularArtist"));
-            $("display-4").text(comment);
+            $(".comment-clerk").text(comment);
           }  
 
         }); // End inner ajax
@@ -84,6 +84,7 @@ function loadYoutube(input){
     }).then(function(data) {
     var newVideo = "https://www.youtube.com/embed/" + data.items[0].id.videoId;
     $(".embed-responsive-item").attr("src", newVideo);
+
   
     }); //End ajax
 }
