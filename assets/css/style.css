@@ -1,11 +1,31 @@
- body {
-    background-image: url('../images/recordsbackground2.png')
-    background-color: rgba(156,212,255,1) 
-    background-size: 100%;
+ body, html {
+     background: 100%;
+ }
+.bg {
+    background-image: url('https://images4.alphacoders.com/458/thumb-1920-45828.jpg');
+    background-color: rgba(156,212,255,1);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
     }
-.card, {
+.card {
      background-color: rgba(113,193,255,1) 
+     background-image: inherit;
     }
-.card-body, .container, .jumbotron {
-     background-color: rgba(208,235,255,1) 
+.card-body, .container, .jumbotron, .text {
+    background-image: inherit;
+    background-color: rgba(208,235,255,1) 
     }
+.jumbobg {
+    background-image: url('http://www.vanyaland.com/wp-content/uploads/2018/03/HighFidelity-1920x1199.jpg');
+    background-size: cover; 
+}
+.comment-clerk {
+    background-color: black;
+    color: white;
+    
+}
+.search-gif {
+    background-image: url('https://media.giphy.com/media/90WzNHvVHgK4/giphy.gif');
+    background-size: cover;
+}
