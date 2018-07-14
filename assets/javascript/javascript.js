@@ -6,7 +6,6 @@ $(document).ready(function() {
     sessionStorage.setItem("count", 0);
     sessionStorage.setItem("leastPopularCount", 999999999999999)
     $(".wiki-description").html("");
-    debugger
     $(".comment-clerk").text("Hmmmmmm, let me think ...");
 
     var infoUrl;
@@ -45,20 +44,22 @@ $(document).ready(function() {
               
           if (responseobject.error == "6"){}
           else if ((playCount < sessionStorage.getItem("leastPopularCount")) & playCount > loopMax & y < maxReplace){
-            sessionStorage.setItem("leastPopularCount" , responseobject.artist.stats.playcount);
-            sessionStorage.setItem("leastPopularArtist", responseobject.artist.name);
-            sessionStorage.setItem("leastPopularBio", responseobject.artist.bio.content);
-            y++;
-            sessionStorage.setItem("replaceCount", y); 
-            console.log(responseobject.artist.name);
-          }
-            
+            if (responseobject.artist.bio.content.includes("There are multiple artists with this name")){
+            }
+            else {
+              sessionStorage.setItem("leastPopularCount" , responseobject.artist.stats.playcount);
+              sessionStorage.setItem("leastPopularArtist", responseobject.artist.name);
+              sessionStorage.setItem("leastPopularBio", responseobject.artist.bio.content);
+              y++;
+              sessionStorage.setItem("replaceCount", y); 
+              console.log(responseobject.artist.name);
+            }
+          }       
 
           if (x == (loopMax - 1)){
             $(".search-term").text(sessionStorage.getItem("leastPopularArtist"));
             $(".wiki-description").html(sessionStorage.getItem("leastPopularBio"));
             
-
             loadYoutube(sessionStorage.getItem("leastPopularArtist"));
             var comment = newComment(sessionStorage.getItem("searchTerm"), sessionStorage.getItem("leastPopularArtist"));
             $(".comment-clerk").text(comment);
@@ -72,12 +73,14 @@ $(document).ready(function() {
 
 function loadYoutube(input){
     var searchTerm = input;
+    debugger
 
     searchTerm += " official";
 
     var searchTerm = toTitleCase(searchTerm);
     
     var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&order=viewCount&maxResults=1&q=" + searchTerm + "&key=AIzaSyBIiK7587GW7yRbP8xNtzZOyE_mFULyl74";
+    debugger
     $.ajax({
       url: queryURL,
       method: "GET",
