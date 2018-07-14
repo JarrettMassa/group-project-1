@@ -44,7 +44,7 @@ $(document).ready(function() {
               
           if (responseobject.error == "6"){}
           else if ((playCount < sessionStorage.getItem("leastPopularCount")) & playCount > loopMax & y < maxReplace){
-            if (responseobject.artist.bio.content.includes("There are multiple artists with this name")){
+            if (responseobject.artist.bio.content.includes("There are multiple artists")){
             }
             else {
               sessionStorage.setItem("leastPopularCount" , responseobject.artist.stats.playcount);
